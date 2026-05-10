@@ -28,7 +28,6 @@ ykman config -h
 ykman config nfc -h
 ```
 
-
 ### Disable What You Don't Need
 
 Check with `ykman info`. Disable what you don't need with:
