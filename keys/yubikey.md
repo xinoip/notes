@@ -71,3 +71,11 @@ sudo /etc/sv/pcscd/run
 After this, you should be able to run `ykman openpgp info` successfully.
 
 But for `gpg` to work correctly, don't use `pcscd` daemon. Instead use the usual `gpg` programs and daemons.
+
+## Import SSH Keys
+
+You need to create handle keys targeting the resident keys living in the
+yubikey. To do that, use `ssh-keygen -K`. It will kick off the usual key
+generation flow that will create the handle key.
+
+This handle key can't do anything on its own if the yubikey is not available.
