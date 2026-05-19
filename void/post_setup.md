@@ -67,7 +67,8 @@ xi xpadneo xone
 ## Fonts
 
 ```sh
-xi noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji nerd-fonts
+xi noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji nerd-fonts-symbols-ttf \
+   font-iosevka
 
 # Improve font rendering
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
