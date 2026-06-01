@@ -22,3 +22,31 @@ beforehand signaling the compiler. This way they can still use VLA function
 signature.
 
 Documentation from GNU C: [6.2.1 Arrays of Variable Length](https://gcc.gnu.org/onlinedocs/gcc/Variable-Length.html)
+
+## Pointer Wrapping Struct
+
+If a function needs to modify a pointer, you need to pass a pointer to that
+pointer. This results in a double pointer. Working with double pointers is
+cumbersome. Especially doing pointer arithmetic on them. For example:
+
+```c
+int **ptr;
+*ptr++; // Increments double pointer itself, then dereference old address.
+(*ptr)++; // Increments actual underlying pointer.
+```
+
+Idea is to wrap the pointer in a struct. This way you can pass a pointer to
+that struct. Then you can use the pointer as if it was a normal pointer:
+
+```c
+typedef struct {
+  int *ptr;
+} Cursor;
+
+void foo(MyPtr *cursor) {
+  printf("%d\n", *(cursor->ptr));
+  cursor->ptr++;
+}
+```
+
+These are often named 'Cursors' in C codebases.
