@@ -43,7 +43,12 @@ xi linux-firmware-amd vulkan-loader mesa-dri mesa-vulkan-radeon mesa-vaapi \
 ## NVIDIA Firmware
 
 ```sh
+# for new models
 xi nvidia nvidia-libs-32bit vulkan-loader vulkan-loader-32bit
+
+# for older models, like gtx 1070
+xi nvidia580 nvidia580-libs-32bit vulkan-loader vulkan-loader-32bit
+
 sudo bash -c 'cat <<EOF > "/etc/modprobe.d/nvidia_drm.conf"
 options nvidia_drm modeset=1
 EOF'
@@ -236,7 +241,7 @@ cd void-packages
 echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
 
 cd ~/3pp/void-packages
-./xbps-src pkg brave-origin
+./personal/repkg_all.sh
 xi brave-origin
 ```
 
