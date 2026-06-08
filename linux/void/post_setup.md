@@ -127,11 +127,11 @@ xi kde-plasma kde-baseapps dolphin kdegraphics-thumbnailers ffmpegthumbs ark \
 
 ```sh
 cd ~
-rm -rf Desktop Documents Music Public Templates Videos Downloads Pictures
+rm -rf Desktop Documents Music Public Templates Videos Downloads Pictures Projects
 mkdir -p download picture
 mkdir -p 3pp/pio-xdg
 cd 3pp/pio-xdg
-mkdir Desktop Documents Music Public Templates Videos
+mkdir Desktop Documents Music Public Templates Videos Projects
 ```
 
 ## Service Logging
