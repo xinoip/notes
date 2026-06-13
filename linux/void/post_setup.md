@@ -242,7 +242,7 @@ echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
 
 cd ~/3pp/void-packages
 ./personal/repkg_all.sh
-xi brave-origin
+xi brave-origin mullvad-vpn
 ```
 
 ## Docker
