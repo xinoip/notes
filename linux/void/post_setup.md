@@ -289,3 +289,4 @@ sudo ln -s /etc/sv/sddm /var/service
 
 - Go over System Settings
 - Turn on "Automatic Login"
+- Enable swapfile
