@@ -89,6 +89,10 @@ gpg --keyserver hkps://keyserver.ubuntu.com --send-keys <KEY_ID>
 Check your keyring and diagnose any issues:
 
 ```sh
+# Create config directory with correct permissions
+mkdir -p ~/.config/gnupg
+chmod 700 ~/.config/gnupg
+
 # List keys in keyring
 gpg -K
 # ssb lines are subkeys. If they have a `>` character, it means they are on the

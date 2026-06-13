@@ -7,6 +7,8 @@ Hardware security key.
 On a Void Linux system, I installed these:
 
 ```bash
+xi openssh-sk-helper
+
 # CLI tool called "ykman".
 xi yubikey-manager
 
