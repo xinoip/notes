@@ -139,3 +139,8 @@ Keys can be imported from a key server too:
 # Will give an option to import it
 gpg --keyserver hkps://keys.openpgp.org --search-keys my@email.com
 ```
+
+## Using GPG Key on a new machine with Yubikey
+
+Import your public key with `gpg --import mypublic.asc` and then just try to use
+gpg as usual. It will pick up the key from the Yubikey.

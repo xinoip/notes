@@ -7,7 +7,10 @@ Hardware security key.
 On a Void Linux system, I installed these:
 
 ```bash
-xi openssh-sk-helper
+# These are enough to just consume the Yubikey.
+xi openssh-sk-helper gnupg2-scdaemon
+
+# Packages below are for Yubikey management.
 
 # CLI tool called "ykman".
 xi yubikey-manager
