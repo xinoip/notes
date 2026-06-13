@@ -269,7 +269,7 @@ sudo flatpak install flathub com.github.tchx84.Flatseal
 ```sh
 # You will probably lose connection.
 xi NetworkManager
-sudo rm -rf /var/service/dhcpcd /var/service/wpa_supplicant && \
+sudo delf /var/service/dhcpcd /var/service/wpa_supplicant && \
 sudo ln -s /etc/sv/NetworkManager /var/service
 ```
 
@@ -284,3 +284,8 @@ sudo xbps-reconfigure -fa
 ```sh
 sudo ln -s /etc/sv/sddm /var/service
 ```
+
+## Additional Steps for KDE
+
+- Go over System Settings
+- Turn on "Automatic Login"
