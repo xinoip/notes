@@ -202,6 +202,9 @@ xi -y easyeffects lsp-plugins soundconverter
 
 # Docs
 xi -y pandoc ImageMagick poppler libreoffice
+
+# Sync
+xi -y syncthingtray
 ```
 
 ## System Limits
