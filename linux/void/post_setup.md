@@ -29,25 +29,25 @@ enabling addition repositories:
 ```sh
 sudo xbps-install -Syu
 sudo xbps-install -Sy xtools
-xi void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
-xi -Su
+xi -y void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+xi -Syu
 ```
 
 ## AMD Firmware
 
 ```sh
-xi linux-firmware-amd vulkan-loader mesa-dri mesa-vulkan-radeon mesa-vaapi \
-   mesa-vdpau mesa-dri-32bit vulkan-loader-32bit mesa-vulkan-radeon-32bit
+xi -y linux-firmware-amd vulkan-loader mesa-dri mesa-vulkan-radeon mesa-vaapi \
+   mesa-dri-32bit vulkan-loader-32bit mesa-vulkan-radeon-32bit
 ```
 
 ## NVIDIA Firmware
 
 ```sh
 # for new models
-xi nvidia nvidia-libs-32bit vulkan-loader vulkan-loader-32bit
+xi -y nvidia nvidia-libs-32bit vulkan-loader vulkan-loader-32bit
 
 # for older models, like gtx 1070
-xi nvidia580 nvidia580-libs-32bit vulkan-loader vulkan-loader-32bit
+xi -y nvidia580 nvidia580-libs-32bit vulkan-loader vulkan-loader-32bit
 
 sudo bash -c 'cat <<EOF > "/etc/modprobe.d/nvidia_drm.conf"
 options nvidia_drm modeset=1
@@ -57,7 +57,7 @@ EOF'
 ## Intel Firmware
 
 ```sh
-xi linux-firmware-intel mesa-vulkan-intel intel-video-accel mesa-dri \
+xi -y linux-firmware-intel mesa-vulkan-intel intel-video-accel mesa-dri \
    vulkan-loader mesa-vulkan-intel-32bit mesa-dri-32bit vulkan-loader-32bit \
    intel-ucode linux-firmware
 ```
@@ -66,13 +66,13 @@ xi linux-firmware-intel mesa-vulkan-intel intel-video-accel mesa-dri \
 
 ```sh
 # Gamepads
-xi xpadneo xone
+xi -y xpadneo xone
 ```
 
 ## Fonts
 
 ```sh
-xi noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji nerd-fonts-symbols-ttf \
+xi -y noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji nerd-fonts-symbols-ttf \
    font-iosevka
 
 # Improve font rendering
@@ -83,7 +83,7 @@ sudo xbps-reconfigure -f fontconfig
 ## Cron Jobs
 
 ```sh
-xi snooze
+xi -y snooze
 sudo ln -s /etc/sv/snooze-daily /var/service
 sudo ln -s /etc/sv/snooze-weekly /var/service
 sudo mkdir -p /etc/cron.weekly
@@ -98,20 +98,20 @@ sudo chmod +x /etc/cron.weekly/pio_maintain
 ## System Services
 
 ```sh
-xi elogind
+xi -y elogind
 sudo ln -s /etc/sv/dbus /var/service
 
-xi pipewire
+xi -y pipewire
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 sudo mkdir -p /etc/xdg/autostart
 sudo ln -s /usr/share/applications/pipewire.desktop /etc/xdg/autostart
 
-xi chrony
+xi -y chrony
 sudo ln -s /etc/sv/chronyd /var/service
 
-xi bluez libspa-bluetooth
+xi -y bluez libspa-bluetooth
 sudo usermod -aG bluetooth $USER
 sudo ln -s /etc/sv/bluetoothd /var/service
 ```
@@ -119,7 +119,7 @@ sudo ln -s /etc/sv/bluetoothd /var/service
 ## KDE
 
 ```sh
-xi kde-plasma kde-baseapps dolphin kdegraphics-thumbnailers ffmpegthumbs ark \
+xi -y kde-plasma kde-baseapps dolphin kdegraphics-thumbnailers ffmpegthumbs ark \
    spectacle xorg-minimal gwenview evince ocean-sound-theme plasma-browser-integration
 ```
 
@@ -137,7 +137,7 @@ mkdir Desktop Documents Music Public Templates Videos Projects
 ## Service Logging
 
 ```sh
-xi socklog-void
+xi -y socklog-void
 sudo ln -s /etc/sv/socklog-unix /var/service
 sudo ln -s /etc/sv/nanoklogd /var/service
 sudo usermod -aG socklog $USER
@@ -149,7 +149,7 @@ sudo usermod -aG socklog $USER
 cd ~
 git clone https://github.com/xinoip/dotfiles
 cd dotfiles
-xi stow zsh
+xi -y stow zsh
 rm -rf ~/.config/user-dirs.dirs
 stow zsh nvim kitty tmux xdg git lazygit mangohud pulse tealdeer wget
 sudo bash -c 'cat <<EOF >> "/etc/zsh/zshenv"
@@ -172,7 +172,7 @@ xi -y btop dust duf baobab gparted lshw openrgb bootchart2 vsv progress \
    xrandr
 
 # Files
-xi -y yazi xz 7zip 7zip-unrar unrar unzip unp trash-cli
+xi -y yazi xz 7zip 7zip-unrar unrar unzip unp trash-cli mpv
 
 # Toolchains
 xi -y base-devel go cargo clang llvm clang-tools-extra n cmake ninja
@@ -180,7 +180,7 @@ xi -y base-devel go cargo clang llvm clang-tools-extra n cmake ninja
 # Development
 xi -y vim neovim tree-sitter tree-sitter-devel vscode lazygit git-filter-repo delta \
    man-pages-devel man-pages-posix prelink tokei docker lazydocker docker-buildx \
-   android-tools
+   android-tools tree-sitter-cli
 
 # Networking
 xi -y wireshark wireshark-qt termshark nmap mtr inetutils-telnet bind-utils \
@@ -220,7 +220,7 @@ sudo sysctl -p
 ## Better Battery
 
 ```sh
-xi tlp powertop
+xi -y tlp powertop
 sudo ln -s /etc/sv/tlp /var/service
 ```
 
@@ -228,7 +228,7 @@ sudo ln -s /etc/sv/tlp /var/service
 
 ```sh
 N_PREFIX=$HOME/3pp/node n lts
-xi pnpm
+xi -y pnpm
 ```
 
 ## Void Packages Repository
@@ -242,7 +242,7 @@ echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
 
 cd ~/3pp/void-packages
 ./personal/repkg_all.sh
-xi brave-origin mullvad-vpn
+xi -y brave-origin mullvad-vpn
 ```
 
 ## Docker
@@ -255,7 +255,7 @@ sudo usermod -aG docker $USER
 ## Flatpak
 
 ```sh
-xi flatpak
+xi -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 sudo flatpak install flathub net.davidotek.pupgui2
@@ -267,9 +267,10 @@ sudo flatpak install flathub com.github.tchx84.Flatseal
 ## Switch to Network Manager
 
 ```sh
-# You will probably lose connection.
-xi NetworkManager
-sudo delf /var/service/dhcpcd /var/service/wpa_supplicant && \
+# You will probably lose connection. Or don't.
+xi -y NetworkManager
+sudo usermod -aG network $USER
+sudo rm -rf /var/service/dhcpcd /var/service/wpa_supplicant && \
 sudo ln -s /etc/sv/NetworkManager /var/service
 ```
 
@@ -287,6 +288,7 @@ sudo ln -s /etc/sv/sddm /var/service
 
 ## Additional Steps for KDE
 
-- Go over System Settings
 - Turn on "Automatic Login"
+- Install kwalletmanager and remove kwallet password
+- Go over System Settings
 - Enable swapfile

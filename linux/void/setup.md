@@ -120,6 +120,8 @@ Chroot into the system:
 
 ```sh
 xchroot /mnt /bin/bash
+
+# Below is not needed generally but check it to be sure.
 chown root:root /
 chmod 755 /
 ```
