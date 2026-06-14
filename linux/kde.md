@@ -20,3 +20,25 @@ Someone reported the issue [on KDE discussions](https://discuss.kde.org/t/changi
 
 I don't have a permanent fix for now. Just [[kde#Force Reload]] the desktop environment
 to fix it.
+
+## Addons and Scripts
+
+Since there is no way to easily track down what you configured or installed upon
+KDE, I will be keeping a list of addons and scripts here.
+
+I use these kwin scripts:
+
+- Mouse Tiler
+- Remember Window Position
+
+For Mouse tiler, I these layout settings:
+
+```text
+SPECIAL_MAXIMIZE
+SPECIAL_FULLSCREEN
+SPECIAL_NO_TITLEBAR_AND_FRAME
+0,0,67,100+67,0,33,50+67,50,33,50
+0,0,67,100+67,0,33,100
+0,0,25,100+75,0,25,100+25,0,50,100
+2x1
+```
