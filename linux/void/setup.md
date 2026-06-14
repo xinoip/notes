@@ -52,7 +52,7 @@ I keep it simple. Just 2 partitions:
 
 - `efi` for EFI boot partition, mounted at `/boot/efi`. 1G is good.
 - `root` for the rest of the system, mounted at `/`. Rest of the space.
-- I don't use `swap`.
+- I don't use dedicated partition for `swap`.
 
 Use these programs:
 
@@ -104,6 +104,8 @@ cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 ```
 
 Bootstrap the system:
+
+TODO: Consider using `gummiboot` instead of `grub`.
 
 ```sh
 # Cryptsetup not needed if not using full disk encryption.

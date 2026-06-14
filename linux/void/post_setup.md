@@ -162,7 +162,7 @@ chsh --shell /usr/bin/zsh
 
 ```sh
 # Terminal
-xi -y zsh kitty tmux wl-clipboard fzf ripgrep fd jq lsd bat procs tealdeer stow
+xi -y zsh kitty tmux wl-clipboard xclip fzf ripgrep fd jq lsd bat procs tealdeer stow
 
 # Fancy
 xi -y lolcat-c figlet ufetch cowsay asciinema wiki-tui
@@ -240,6 +240,7 @@ xi -y pnpm
 cd ~/3pp
 git clone https://github.com/xinoip/void-packages.git --depth=1
 cd void-packages
+gr add upstream https://github.com/void-linux/void-packages.git
 ./xbps-src binary-bootstrap
 echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
 
@@ -288,10 +289,3 @@ sudo xbps-reconfigure -fa
 ```sh
 sudo ln -s /etc/sv/sddm /var/service
 ```
-
-## Additional Steps for KDE
-
-- Turn on "Automatic Login"
-- Install kwalletmanager and remove kwallet password
-- Go over System Settings
-- Enable swapfile
