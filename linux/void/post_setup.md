@@ -172,7 +172,7 @@ xi -y btop dust duf baobab gparted lshw openrgb bootchart2 vsv progress \
    xrandr
 
 # Files
-xi -y yazi xz 7zip 7zip-unrar unrar unzip unp trash-cli mpv
+xi -y yazi xz 7zip 7zip-unrar unrar unzip unp trash-cli mpv rclone age
 
 # Toolchains
 xi -y base-devel go cargo clang llvm clang-tools-extra n cmake ninja
