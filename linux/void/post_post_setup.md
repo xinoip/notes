@@ -9,9 +9,7 @@ Having a swap makes kernel happier: [[swap]]
 
 ## KDE Settings
 
-- Go over System Settings.
-- Turn on "Automatic Login".
-- Install `kwalletmanager` and remove `kwallet` password.
+Check out [[kde]] for more details.
 
 ## Change Bootloader: `gummiboot`
 

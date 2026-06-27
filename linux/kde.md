@@ -36,9 +36,20 @@ For Mouse tiler, I these layout settings:
 ```text
 SPECIAL_MAXIMIZE
 SPECIAL_FULLSCREEN
-SPECIAL_NO_TITLEBAR_AND_FRAME
 0,0,67,100+67,0,33,50+67,50,33,50
 0,0,67,100+67,0,33,100
 0,0,25,100+75,0,25,100+25,0,50,100
 2x1
+SPECIAL_NO_TITLEBAR_AND_FRAME
 ```
+
+It creates very dumb shortcuts. Make sure to delete them. Especially
+`Ctrl+Space` one.
+
+## Remove KWallet Annoyance
+
+Install `kwalletmanager` and remove `kwallet` password.
+
+## Additional Settings
+
+- Automatic Login
