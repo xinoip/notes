@@ -10,6 +10,7 @@ mobile development. Check also:
 
 - Check [setup guide](https://docs.flutter.dev/get-started/install)
 - Install `android-studio` (srcpkg from void-packages)
+- Make sure to select correct installation path for SDK
 - Run `android-studio` and install SDK to `~/3pp/android`
 - Open SDK manager and install SDK CLI tools as well
 - Install flutter by getting the `.tar.gz` release and store it at `~/3pp/flutter`

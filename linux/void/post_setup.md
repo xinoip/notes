@@ -180,7 +180,7 @@ xi -y base-devel go cargo clang llvm clang-tools-extra n cmake ninja
 # Development
 xi -y vim neovim tree-sitter tree-sitter-devel vscode lazygit git-filter-repo delta \
    man-pages-devel man-pages-posix prelink tokei docker lazydocker docker-buildx \
-   android-tools tree-sitter-cli
+   android-tools tree-sitter-cli mesa-utils gtk+3-devel gtk+-devel
 
 # Networking
 xi -y wireshark wireshark-qt termshark nmap mtr inetutils-telnet bind-utils \
@@ -246,7 +246,7 @@ echo XBPS_ALLOW_RESTRICTED=yes >>etc/conf
 
 cd ~/3pp/void-packages
 ./personal/repkg_all.sh
-xi -y brave-origin mullvad-vpn
+xi -y brave-origin mullvad-vpn android-studio
 ```
 
 ## Docker
