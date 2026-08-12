@@ -7,11 +7,16 @@ Best things to do on a new Ubuntu VM.
 Install these packages for support in the guest.
 
 ```bash
-sudo apt update && sudo apt upgrade && sudo apt autoremove
+sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y
 sudo apt install -y qemu-guest-agent spice-vdagent openssh-server \
-    vim
+    vim gnome-browser-connector
 sudo systemctl enable --now ssh
 ```
+
+Install 'Dash to Panel' to earn back the screen real estate.
+
+Quickly go over settings. Tweak them to remove annoyances such as auto-locking
+or suspending.
 
 ## Shared Folder
 
