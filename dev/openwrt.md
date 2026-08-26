@@ -5,6 +5,17 @@
 ifstatus wan
 ```
 
+## Service Management
+
+```sh
+# List services.
+service
+
+# Inspect logs.
+logread
+logread -e 'service name'
+```
+
 ## Virtual Machine
 
 Download `x86-64-generic-ext4-combined` image from [official OpenWRT downloads](https://downloads.openwrt.org/releases/).
@@ -22,6 +33,9 @@ Set up virtual networks:
 Setup disk image:
 
 ```sh
+# Resize disk image.
+qemu-img resize disk.img 20G -f raw
+
 # Attach as loopback device.
 sudo losetup --find --show --partscan disk.img
 
@@ -81,3 +95,27 @@ default route via the openwrt-wan gateway
 
 Later on create additional VMs that only has a single NIC connected to
 `openwrt-lan`. These VMs will be behind the OpenWRT router.
+
+## DANGEROUS: Enable SSH over WAN
+
+This is a neat thing to do while working with the VMs or local isolated
+networks.
+
+OpenWRT already runs Dropbear SSH server by default but it is only exposed on
+LAN side. This makes it available to WAN side as well.
+
+```sh
+uci -q delete firewall.ssh_wan
+uci set firewall.ssh_wan='rule'
+uci set firewall.ssh_wan.name='Allow-SSH-from-WAN'
+uci set firewall.ssh_wan.src='wan'
+uci set firewall.ssh_wan.proto='tcp'
+uci set firewall.ssh_wan.dest_port='22'
+uci set firewall.ssh_wan.target='ACCEPT'
+uci commit firewall
+/etc/init.d/firewall restart
+```
+
+## Dropbear SSH Quirks
+
+- `~/.ssh/config` or any kind of equivalent is not available.
