@@ -46,6 +46,9 @@ SPECIAL_NO_TITLEBAR_AND_FRAME
 It creates very dumb shortcuts. Make sure to delete them. Especially
 `Ctrl+Space` one.
 
+Setting changes take effect only after toggling mouse tiler script on and off
+again.
+
 ## Remove KWallet Annoyance
 
 Install `kwalletmanager` and remove `kwallet` password.
