@@ -86,3 +86,9 @@ ethtool --offload DEV rxvlan off txvlan off
 # Same as:
 # ethtool -K DEV rxvlan off txvlan off
 ```
+
+## Stuff
+
+```sh
+xdp-loader features eth0
+```
