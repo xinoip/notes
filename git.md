@@ -14,8 +14,9 @@ ops: Configure CI/CD.
 
 ## Project Local Ignore List
 
-If you want to ignore some files in Git project but don't want to commit ignore list, utilize `.git/info/exclude`
-file. It's just like `.gitignore` file but just for local user.
+If you want to ignore some files in Git project but don't want to commit ignore
+list, utilize `.git/info/exclude` file. It's just like `.gitignore` file but
+just for local user.
 
 ## Editing Multiple Commits with Interactive Rebase
 
@@ -42,4 +43,17 @@ git commit --amend --no-gpg-sign --no-edit
 
 # Change author.
 git commit --amend --author="author_name <email>" --no-edit
+```
+
+## Check Untracked Files
+
+```sh
+# Ignored + Untracked
+git ls-files --others --ignored --exclude-standard
+
+# Untracked
+git ls-files --others  --exclude-standard
+
+# Clean dry-run
+git clean -ndx
 ```
