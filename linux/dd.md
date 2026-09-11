@@ -4,10 +4,12 @@
 
 ## Make a Bootable USB Drive from ISO
 
-Dummy write all the bytes to the USB drive. This doesn't work for Windows ISO. I am not sure if the issue is only limited to Windows or it exists for other ISO too.
+Dummy write all the bytes to the USB drive. This doesn't work for Windows ISO. I
+am not sure if the issue is only limited to Windows or it exists for other ISO
+too.
 
 ```sh
-sudo dd if=my-iso.iso of=/dev/sdX bs=4M status=progress
+sudo dd if=my-iso.iso of=/dev/sdX oflag=direct bs=4M status=progress
 sync
 ```
 
